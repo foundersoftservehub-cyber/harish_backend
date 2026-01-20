@@ -16,11 +16,18 @@ Message:
 {message}
 """
 
-    send_zoho_mail(
-        subject=f"New Contact Inquiry from {name}",
-        content=content,
-        to_email="founder@softservehub.in",
-    )
+    try:
+        send_zoho_mail(
+            subject=f"New Contact Inquiry from {name}",
+            content=content,
+            to_email="founder@softservehub.in",
+        )
+        print("Zoho mail sent successfully")
+
+    except Exception as e:
+        print("Zoho mail failed ❌")
+        print(str(e))
+
 
 
 class ContactAPIView(APIView):

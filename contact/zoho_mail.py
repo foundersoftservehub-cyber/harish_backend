@@ -20,7 +20,7 @@ def get_access_token():
     return res.json()["access_token"]
 
 
-def send_zoho_mail(subject, content, to_email): 
+def send_zoho_mail(subject, content, to_email):
     access_token = get_access_token()
 
     headers = {
@@ -44,4 +44,7 @@ def send_zoho_mail(subject, content, to_email):
     print("RESPONSE:", response.text)
     print("================================")
 
-    response.raise_for_status()
+    if not response.ok:
+        return False
+
+    return True
