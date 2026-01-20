@@ -29,7 +29,7 @@ def send_zoho_mail(subject, content, to_email):
     }
 
     payload = {
-        "fromAddress": "hr@manovate.co.in",
+        "fromAddress": "founder@softservehub.in",
         "toAddress": to_email,
         "subject": subject,
         "content": content,
